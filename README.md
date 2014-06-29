@@ -5,7 +5,7 @@ Gentner lab data day - Logit Mixed Models
 
 ##Read in File
 data <- read.csv("~/Desktop/CogSketch_FINAL/all_data.csv")
-
+%This will vary depending on where you store the data 
 
 # Make Subject a factor
 data$subject=as.factor(data$subject)
