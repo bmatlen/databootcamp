@@ -7,11 +7,11 @@ Logit Mixed Models
 data <- read.csv("~/Desktop/CogSketch_FINAL/all_data.csv")
 
 
-# Make Subject a factor
+# Convert Subject Variable to a Factor
 data$subject=as.factor(data$subject)
 
 
-##LOGISTIC MODELING, interaction model 
+##Interaction Model 
 gc()
 full_model <- lmer(Score ~ Group * Test + (1|subject) + (1|topic), family=binomial, data=data,REML=F)
 
@@ -23,9 +23,9 @@ summary(full_model)
 
 
 ## Test Model 
-full_model <- lmer(Score ~ Group + Test + (1|subject), family=binomial, data=data,REML=F)
+full_model <- lmer(Score ~ Group + Test + (1|subject) + (1|topic), family=binomial, data=data,REML=F)
 
-null_model <- lmer(Score ~ Group        + (1|subject), family=binomial, data=data,REML=F)
+null_model <- lmer(Score ~ Group        + (1|subject) + (1|topic), family=binomial, data=data,REML=F)
 
 anova(null_model, full_model)
 
@@ -33,19 +33,19 @@ summary(full_model)
 
 
 ## Group model 
-full_model <- glmer(Score ~ Group + Test + (1|subject), family=binomial, data=data, REML=F)
+full_model <- glmer(Score ~ Group + Test + (1|subject) + (1|topic), family=binomial, data=data, REML=F)
 
-null_model <- glmer(Score ~         Test + (1|subject), family=binomial, data=data, REML=F)
+null_model <- glmer(Score ~         Test + (1|subject) + (1|topic), family=binomial, data=data, REML=F)
 
 anova(null_model, full_model)
 
 summary(full_model)
 
 
-## Model with other random variables
-full_model <- lmer(Score ~ Group * Test + (1|subject) + (1|spatial.reasoning.score) + (1|overall_pretest), family=binomial, data=data, REML=F)
+## Model with Multiple Random Variables
+full_model <- lmer(Score ~ Group * Test + (1|subject) + (1|topic) + (1|spatial.reasoning.score) + (1|overall_pretest), family=binomial, data=data, REML=F)
 
-null_model <- lmer(Score ~ Group + Test + (1|subject) + (1|spatial.reasoning.score) + (1|overall_pretest), family=binomial, data=data, REML=F)
+null_model <- lmer(Score ~ Group + Test + (1|subject) + (1|topic) + (1|spatial.reasoning.score) + (1|overall_pretest), family=binomial, data=data, REML=F)
 
 anova(null_model, full_model)
 
