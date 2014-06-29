@@ -8,7 +8,7 @@ data <- read.csv("~/Desktop/CogSketch_FINAL/all_data.csv")
 
 
 # Make Subject a factor
-data$Subject=as.factor(data$Subject)
+data$subject=as.factor(data$subject)
 
 
 ##LOGISTIC MODELING, interaction model 
