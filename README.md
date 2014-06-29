@@ -14,8 +14,11 @@ data$Subject=as.factor(data$Subject)
 ##LOGISTIC MODELING, interaction model 
 gc()
 full_model <- lmer(Score ~ Group * Test + (1|subject) + (1|topic), family=binomial, data=data,REML=F)
+
 null_model <- lmer(Score ~ Group + Test + (1|subject) + (1|topic), family=binomial, data=data,REML=F)
+
 anova(null_model, full_model)
+
 summary(full_model)
 
 
