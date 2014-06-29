@@ -1,7 +1,7 @@
 databootcamp
 ============
 
-Gentner lab data day
+Gentner lab data day - Logit Mixed Models
 
 ##Read in File
 data <- read.csv("~/Desktop/CogSketch_FINAL/all_data.csv")
