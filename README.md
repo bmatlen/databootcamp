@@ -4,16 +4,16 @@ Data Bootcamp
 Logit Mixed Effects Models
 
 ##Read in File
-data <- read.csv("~/Desktop/CogSketch_FINAL/all_data.csv")
+    data <- read.csv("~/Desktop/CogSketch_FINAL/all_data.csv")
 
 
 ##Read in Packages
-library(car)
+    library(car)
 
-library(lme4)
+    library(lme4)
 
 ##Convert Subject Variable to a Factor
-data$subject=as.factor(data$subject)
+    data$subject=as.factor(data$subject)
 
 
 ##Interaction Model 
