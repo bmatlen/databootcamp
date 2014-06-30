@@ -7,6 +7,10 @@ Logit Mixed Models
 data <- read.csv("~/Desktop/CogSketch_FINAL/all_data.csv")
 
 
+##Read in Packages
+library(car)
+library(lme4)
+
 # Convert Subject Variable to a Factor
 data$subject=as.factor(data$subject)
 
