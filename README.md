@@ -18,30 +18,21 @@ Logit Mixed Effects Models
 ##Interaction Model 
   
     full_model <- glmer(Score ~ Group * Test + (1 + Test|subject) + (1 + Test|topic), family=binomial, data=data)
-
     null_model <- glmer(Score ~ Group + Test + (1 + Test|subject) + (1 + Test|topic), family=binomial, data=data)
-
     anova(null_model, full_model)
-
     summary(full_model)
 
 
 ##Test Model 
     full_model <- glmer(Score ~ Group + Test + (1 + Test|subject) + (1 + Test|topic), family=binomial, data=data)
-
     null_model <- glmer(Score ~ Group        + (1 + Test|subject) + (1 + Test|topic), family=binomial, data=data)
-
     anova(null_model, full_model)
-
     summary(full_model)
 
 ##Group model 
     full_model <- glmer(Score ~ Group + Test + (1 + Test|subject) + (1 + Test|topic), family=binomial, data=data)
-
     null_model <- glmer(Score ~         Test + (1 + Test|subject) + (1 + Test|topic), family=binomial, data=data)
-
     anova(null_model, full_model)
-
     summary(full_model)
 
 
