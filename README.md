@@ -9,7 +9,6 @@ Logit Mixed Effects Models
 
 ##Read in Packages
     library(car)
-
     library(lme4)
 
 ##Convert Subject Variable to a Factor
