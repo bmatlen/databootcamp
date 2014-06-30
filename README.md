@@ -17,7 +17,6 @@ data$subject=as.factor(data$subject)
 
 
 ##Interaction Model 
-  gc()
   
     full_model <- glmer(Score ~ Group * Test + (1 + Test|subject) + (1 + Test|topic), family=binomial, data=data)
 
@@ -48,8 +47,3 @@ data$subject=as.factor(data$subject)
 
 
 
-null_model <- glmer(Score ~ Group + Test + (1|subject) + (1|topic) + (1|spatial.reasoning.score) + (1|overall_pretest), family=binomial, data=data)
-
-anova(null_model, full_model)
-
-summary(full_model)
