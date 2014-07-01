@@ -4,7 +4,6 @@ Data Bootcamp
 Logit Mixed Effects Models
 
     ##Read in File
-    
     data <- read.csv("~/Desktop/CogSketch_FINAL/all_data.csv")
 
 
