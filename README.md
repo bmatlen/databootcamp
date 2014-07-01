@@ -11,7 +11,7 @@ Logit Mixed Effects Models
     library(car)
     library(lme4)
 
-##Convert Subject Variable to a Factor
+    ##Convert Subject Variable to a Factor
     data$subject=as.factor(data$subject)
 
 
