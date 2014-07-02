@@ -2,6 +2,7 @@ Data Bootcamp
 ============
 
 Logit Mixed Effects Models in R
+@author: Bryan Matlen
 
     ##Read in File
     data <- read.csv("all_data.csv")
@@ -38,6 +39,7 @@ Logit Mixed Effects Models in R
 
 
 Mediation Analysis in R
+@author: Brock Ferguson
 
     # MEDIATION Analysis
 
